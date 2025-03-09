@@ -1,0 +1,39 @@
+<div class="form-container">
+<h2>Employee Payroll Form</h2>
+
+<form >
+    <!-- Name Input -->
+    <label for="name">Name</label>
+    <input type="text" [(ngModel)]="employee.name" id="name" placeholder="Enter name" required>
+
+    <!-- Salary Input -->
+    <label for="salary">Salary</label>
+    <input type="text" [(ngModel)]="employee.salary" id="salary" placeholder="Enter salary" required>
+
+    <!-- Department Input -->
+    <label for="department">Department</label>
+    <input type="text" [(ngModel)]="employee.department" id="department" placeholder="Enter department" required>
+
+    <!-- Gender Selection -->
+    <label>Gender</label>
+    <div class="gender-options">
+    <input type="radio" [(ngModel)]="employee.gender" name="gender" id="male" value="Male">
+    <label for="male">Male</label>
+
+    <input type="radio" [(ngModel)]="employee.gender" name="gender" id="female" value="Female">
+    <label for="female">Female</label>
+
+    <input type="radio" [(ngModel)]="employee.gender" name="gender" id="other" value="Other">
+    <label for="other">Other</label>
+    </div>
+
+    <!-- Start Date Selection -->
+    <label for="start-date">Start Date</label>
+    <input type="text" [(ngModel)]="employee.startDate" id="start-date" placeholder="Enter start date (DD/MM/YYYY)" required>
+
+
+    <!-- Submit Button -->
+    <button (click)="addEmployee()" type="submit" class="submit-btn">Submit</button>
+</form>
+</div>
+

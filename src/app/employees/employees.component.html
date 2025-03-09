@@ -1,0 +1,39 @@
+<h1>Employee Payroll App</h1>
+<div class="row">
+    <div class="col-3">
+        <h2>Employee Details</h2>
+        <button (click)="getInformation()" class="btn">Load Info</button>
+        <button (click)="navigateToAddEmployee()" class="btn" id="add-btn">+ Add User</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (item of employeeInfo; track $index) {
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.gender}}</td>
+                        <td>{{item.department}}</td>
+                        <td>{{item.salary}}</td>
+                        <td>{{item.startDate}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
