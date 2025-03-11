@@ -14,6 +14,7 @@ import { DatePipe } from '@angular/common';
 })
 export class EmployeesComponent {
   employeeInfo: any [] = [];
+  noImageUrl = "../assets/299106_profile_icon.png";
   constructor(private employeeService: EmployeeService,private http : HttpClient, private router: Router){
   }
   getInformation(){
@@ -33,9 +34,4 @@ export class EmployeesComponent {
   deleteEmployee(id: number){
     
   }
-  // loadEmployee(){
-  //   this.employeeService.getEmployees().subscribe((res:any)=>{
-  //     this.employeeInfo=res;
-  //   })
-  // }
 }

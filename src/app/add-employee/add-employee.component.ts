@@ -18,7 +18,8 @@ export class AddEmployeeComponent {
     gender: '',
     department: '',
     salary: '',
-    startDate: ''
+    startDate: '',
+    profile_pic:''
   };
 
   constructor(

@@ -13,6 +13,7 @@
             <thead>
                 <tr>
                     <th>No.</th>
+                    <th></th>
                     <th>Name</th>
                     <th>Gender</th>
                     <th>Department</th>
@@ -27,6 +28,9 @@
                 @for (item of employeeInfo; track $index) {
                     <tr>
                         <td>{{$index+1}}</td>
+                        <td>
+                        <img src="../assets/299106_profile_icon.png" alt=" No image" height="50" width="50">
+                        </td>
                         <td>{{item.name}}</td>
                         <td>{{item.gender}}</td>
                         <td>{{item.department}}</td>
@@ -34,7 +38,7 @@
                         <td>{{item.startDate}}</td>
                         <td>
                             <button class="btn" (click)="updateEmployee(item.id)">✏️</button>
-                            <button class="btn" (click)="deleteEmployee(item.id)">❌</button>
+                            <button class="btn btn-success" (click)="deleteEmployee(item.id)">❌</button>
                         </td>
                     </tr>
                 }

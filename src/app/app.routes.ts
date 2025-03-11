@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { EmployeesComponent } from './employees/employees.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 export const routes: Routes = [
     {
         path : "",
@@ -9,5 +10,9 @@ export const routes: Routes = [
     {
         path: "add",
         component: AddEmployeeComponent
+    },
+    {
+        path: "update/:id",
+        component: UpdateEmployeeComponent
     }
 ];
