@@ -12,12 +12,13 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>No.</th>
                     <th>Name</th>
                     <th>Gender</th>
                     <th>Department</th>
                     <th>Salary</th>
                     <th>Start Date</th>
+                    <th>Actions</th>
                     
                 </tr>
             </thead>
@@ -31,6 +32,10 @@
                         <td>{{item.department}}</td>
                         <td>{{item.salary}}</td>
                         <td>{{item.startDate}}</td>
+                        <td>
+                            <button class="btn" (click)="updateEmployee(item.id)">✏️</button>
+                            <button class="btn" (click)="deleteEmployee(item.id)">❌</button>
+                        </td>
                     </tr>
                 }
             </tbody>

@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
   imports: [FormsModule] // Required for ngModel
 })
 export class AddEmployeeComponent {
+  
   employee = {
     name: '',
     gender: '',
@@ -27,14 +28,7 @@ export class AddEmployeeComponent {
   ) {}
 
   addEmployee() {
-    debugger;
-    this.http.post("http://localhost:8080/request",this.employee).subscribe((res:any) => {
-      debugger;
-      if(res == true){
-        alert("Employee details saved!!!");
-      }else{
-        alert("Details cannot be saved for some reason!!!")
-      }
-    })
+    console.log("adding Employee------",this.employee);
+    this.http.post("http://localhost:8080/request",this.employee).subscribe({complete:() => {this.router.navigateByUrl('/') }, error:() =>{alert("Something went wrong!!")}})
   }
 }
