@@ -16,6 +16,7 @@ export class EmployeesComponent {
   employeeInfo: any [] = [];
   noImageUrl = "../assets/299106_profile_icon.png";
   constructor(private employeeService: EmployeeService,private http : HttpClient, private router: Router){
+    this.getInformation();
   }
   getInformation(){
     this.http.get("http://localhost:8080/request").subscribe((result:any) => {
@@ -32,6 +33,5 @@ export class EmployeesComponent {
   }
 
   deleteEmployee(id: number){
-    
   }
 }

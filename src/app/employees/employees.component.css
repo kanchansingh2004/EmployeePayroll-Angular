@@ -10,8 +10,28 @@
     transition: background 0.3s ease-in-out;
 }
 
+.btn-action{
+    background-color: hsla(30, 100%, 50%,0);
+    border: none;
+    margin: 5%;
+    font-size: 20px;
+}
+
+.col-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 #add-btn{
     margin: 20px;
+}
+
+.profile-img{
+    border: none;
+    border-radius: 45%;
 }
 .btn:hover {
     background-color: #0056b3;

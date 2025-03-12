@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-3">
         <h2>Employee Details</h2>
-        <button (click)="getInformation()" class="btn">Load Info</button>
+        <!-- <button (click)="getInformation()" class="btn">Load Info</button> -->
         <button (click)="navigateToAddEmployee()" class="btn" id="add-btn">+ Add User</button>
     </div>
 </div>
@@ -29,7 +29,7 @@
                     <tr>
                         <td>{{$index+1}}</td>
                         <td>
-                        <img src="../assets/299106_profile_icon.png" alt=" No image" height="50" width="50">
+                        <img [src]="item.profile_pic" alt="No image" height="45" width="45" class="profile-img">
                         </td>
                         <td>{{item.name}}</td>
                         <td>{{item.gender}}</td>
@@ -37,8 +37,8 @@
                         <td>{{item.salary}}</td>
                         <td>{{item.startDate}}</td>
                         <td>
-                            <button class="btn" (click)="updateEmployee(item.id)">✏️</button>
-                            <button class="btn btn-success" (click)="deleteEmployee(item.id)">❌</button>
+                            <button class="btn-action" (click)="updateEmployee(item.id)">🖋️</button>
+                            <button class="btn-action btn-success" (click)="deleteEmployee(item.id)">✕</button>
                         </td>
                     </tr>
                 }
