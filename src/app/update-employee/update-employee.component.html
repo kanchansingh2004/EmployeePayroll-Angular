@@ -1,0 +1,57 @@
+<div class="form-container">
+    <h2>Employee Payroll Form</h2>
+
+    <form (ngSubmit)="updateEmployee()">
+        <!-- Name Input -->
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="employee.name" id="name" name="name" placeholder="Enter name" required>
+
+        <!-- Gender Selection -->
+        <label>Gender</label>
+        <div class="gender-options">
+            <input type="radio" [(ngModel)]="employee.gender" name="gender" id="male" value="Male">
+            <label for="male">Male</label>
+
+            <input type="radio" [(ngModel)]="employee.gender" name="gender" id="female" value="Female">
+            <label for="female">Female</label>
+
+            <input type="radio" [(ngModel)]="employee.gender" name="gender" id="other" value="Other">
+            <label for="other">Other</label>
+        </div>
+
+        <!-- Salary Input -->
+        <label for="salary">Salary</label>
+        <input type="text" [(ngModel)]="employee.salary" id="salary" name="salary" placeholder="Enter salary" required>
+
+        <!-- Department Input -->
+        <label for="department">Department</label>
+        <input type="text" [(ngModel)]="employee.department" id="department" name="department" placeholder="Enter department" required>
+
+        <!-- Profile Selection -->
+        <label>Profile</label>
+        <div class="profile-container">
+            <input type="radio" [(ngModel)]="employee.profile_pic" name="profilePic" id="profile1" value="../assets/image2.jpg">
+            <label for="profile1">
+                <img src="../assets/image2.jpg" alt="Profile 1">
+            </label>
+
+            <input type="radio" [(ngModel)]="employee.profile_pic" name="profilePic" id="profile2" value="../assets/image1.jpg">
+            <label for="profile2">
+                <img src="../assets/image1.jpg" alt="Profile 2">
+            </label>
+
+            <input type="radio" [(ngModel)]="employee.profile_pic" name="profilePic" id="profile3" value="../assets/image3.jpg">
+            <label for="profile3">
+                <img src="../assets/image3.jpg" alt="Profile 3">
+            </label>
+        </div>
+
+        <!-- Start Date Selection -->
+        <label for="start-date">Start Date</label>
+        <input type="date" [(ngModel)]="employee.startDate" id="start-date" name="startdate" required>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+
