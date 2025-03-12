@@ -32,6 +32,18 @@ export class EmployeesComponent {
     this.router.navigate(['/update', id]);
   }
 
-  deleteEmployee(id: number){
-  }
+  deleteEmployee(id: number) {
+    const isDelete = confirm("Are you sure you want to delete?");
+    if (isDelete) {
+      this.http.delete('http://localhost:8080/request/' + id).subscribe({
+        complete: () => {
+          alert('Employee deleted successfully');
+          this.getInformation(); // Fetch updated employee list
+        },
+        error: (error) => {
+          console.error('Error deleting employee from server', error);
+        },
+      });
+    }
+  }  
 }

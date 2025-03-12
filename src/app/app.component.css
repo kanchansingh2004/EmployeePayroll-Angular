@@ -1,0 +1,19 @@
+.header-info {
+    display: flex;
+    align-items: center;  /* Aligns items vertically */
+    gap: 15px;  /* Adds spacing between image and heading */
+    background-color: #007bff;
+    padding: 10px 20px;  /* Adds padding to make it look cleaner */
+}
+
+.header-info img {
+    width: 60px;  /* Slightly increase size for better visibility */
+    height: 60px;
+}
+
+.header-info h1 {
+    color: black;  /* Improves text contrast */
+    font-size: 30px;  /* Adjusts text size */
+    font-weight: bold;
+    margin: 0;  /* Removes default margin */
+}
