@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../services/employees.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule]
 })
-export class UpdateEmployeeComponent {
+export class UpdateEmployeeComponent implements OnInit {
+  employeeId!:number;
   employee = {
       name: '',
       gender: '',
@@ -23,12 +24,34 @@ export class UpdateEmployeeComponent {
   
     constructor(
       private employeeService: EmployeeService,
-      private router: Router,
+      private router: Router, 
+      private route: ActivatedRoute,
       private http: HttpClient
     ) {}
   
+    ngOnInit() {
+        this.employeeId = Number(this.route.snapshot.paramMap.get('id'));
+
+        this.employeeService.getEmployeeById(this.employeeId).subscribe({
+          next: (data) => {
+            this.employee = data;
+          },
+          error: ()=>{
+            alert("Error while fetching employee details.");
+            this.router.navigateByUrl('/');
+          }
+        });
+    }
+
     updateEmployee() {
-      console.log("adding Employee------",this.employee);
-      this.http.post("http://localhost:8080/request",this.employee).subscribe({complete:() => {this.router.navigateByUrl('/') }, error:() =>{alert("Something went wrong!!")}})
+      this.employeeService.updateEmployee(this.employeeId, this.employee).subscribe({
+        next: () => {
+          alert("Employee updated successfully!!");
+          this.router.navigateByUrl("/");
+        },
+        error:()=>{
+          alert("Something went wrong!");
+        }
+      });
     }
 }
